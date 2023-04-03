@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Eintrag löschen</h1>
+<form action="" method="post">{% csrf_token %}
+<p>Bist du dir sicher, dass dieser Eintrag gelöscht werden soll"?</p>
+<input type="submit" value="Bestätigen">
+</form>
+{% endblock content %}

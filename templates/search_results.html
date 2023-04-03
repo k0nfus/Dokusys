@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Search Results</h1>
+<p>Klient:innen</p>
+<ul>
+  {% for object in object_list %}
+    <li>
+      <a href="{% url 'detailclient' object.pk %}"><strong>{{ object.name }}, {{ object.vorname }},</strong> Tel: {{ object.telefonnummer }}, Projekt: {{ object.projekt }}</a>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock content %}

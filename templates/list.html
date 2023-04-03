@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>list</h1>
+
+{% for eintrag in eintrag_list %}
+    <h3><a href="{% url 'detail' eintrag.pk %}">{{ eintrag.datum }}, {{eintrag.klient}},</a></h3>
+    {% if eintrag.bild %}
+    <img src="{{ eintrag.image.url }}" class="img-fluid" style="max-width: 250px; max-height: 250px;">
+    {% endif %}
+    <p>{{ eintrag.doku | linebreaks }} </p>
+    <hr>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div id="beitrag">
+<h1>Klient:inennkartei</h1>
+<h2>{{ object.klient }}</h2>
+{% if eintrag.bild %}
+<img src="{{ eintrag.image.url }}" class="img-fluid" style="max-width: 250px; max-height: 250px;">
+{% endif %}
+</div>
+<p>{{ object.datum }}</p>
+<p>{{ object.doku }}</p>
+<a href="{% url 'edit' eintrag.pk %}">Eintrag bearbeiten</a>
+<p><a href="{% url 'delete' eintrag.pk %}">Eintrag löschen</a></p>
+
+{% endblock content %}

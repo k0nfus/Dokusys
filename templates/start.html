@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h1 id="beitrag" style="text-align: right;"> DOKUSYS </h1>
+
+<div id="beitrag">
+    <center>
+        <br>    
+        <form action="{% url 'search_results' %}" method="get">
+        <input name="q" type="text" placeholder="Klient:in suchen">
+        </form>
+    </center>
+</div>
+<center><p><a href="{% url 'listclients'%}" type="button" id="kommentar">Klient:innen anzeigen</a>
+    <span style="margin-left: 10px;">
+    <a href="{% url 'newclient'%}" type="button" id="kommentar">Neue Klient:innen anlegen</a>
+    <span style="margin-left: 10px;">
+    <a href="{% url 'new'%}" type="button" id="kommentar">Neuer Eintrag für bestehende Klient:innen</a></p></center>
+
+{% endblock content %}

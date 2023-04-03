@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="beitrag">
+<h1 id="datum">{{ klient.name }}, {{ klient.vorname }}</h1>
+<p>Telefonnummer: {{ klient.telefonnummer }}</p>
+<p>Projekt: {{ klient.projekt }}</p>
+<p>Bemerkungen: {{ klient.bemerkung }}</p>
+</div>
+<div id="beitrag">
+<h1>Einträge:</h1>
+<br>
+<center><h4>dieser Abschnitt befindet sich noch in Bearbeitung</h4></center>
+</div>
+<a href="{% url 'list' %}">Einträge ansehen</a>
+<a href="{% url 'editclient' klient.pk %}">Klient:in bearbeiten</a>
+<p><a href="{% url 'deleteclient' klient.pk %}">Klient:in löschen</a></p>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div id="projekt">
+<h1 id="datum">Klient:innen</h1>
+<ul id="liste">
+{% for klient in klient_list %}
+    <h3><li><a href="{% url 'detailclient' klient.pk %}">{{ klient.name|upper }}, {{ klient.vorname }}</a></li></h3>
+{% endfor %}
+</ul>
+</div>
+{% endblock content %}
